@@ -38,6 +38,7 @@ CLI development
 */
 
 #include <string>
+#include "CLI.h"
 
 int main(int argc, char* argv[]){
     std::string host = "127.0.0.1";
@@ -57,4 +58,8 @@ int main(int argc, char* argv[]){
         ++i;
     }
 
+    CLI cli(host, port);
+    cli.run();
+
+    return 0;
 }
