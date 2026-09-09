@@ -1,4 +1,5 @@
 #include "CLI.h"
+#include "ResponseParser.h"
 #include <cstddef>
 #include <iostream>
 #include <string>
@@ -45,9 +46,9 @@ void CLI::run() {
         std::vector<std::string>args = commandHandler::splitArgs(line);
         if(args.empty()) continue;
 
-        for(const auto &arg : args){
-            std::cout<<arg<<"\n";
-        }
+        // for(const auto &arg : args){
+        //     std::cout<<arg<<"\n";
+        // }
 
         std::string command = commandHandler::buildRESPcommand(args);
         if(!redisClient.sendCommand(command)){
@@ -55,6 +56,9 @@ void CLI::run() {
             break;
         }
         // parse and print response
-        
+        std::string response = ResponseParser::parseResponse(redisClient.getSocketFD());
+        std::cout<<response<<"\n";
     }
+
+    redisClient.disconnect();
 } 

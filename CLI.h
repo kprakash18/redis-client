@@ -4,6 +4,7 @@
 #include <string>
 #include "redisClient.h"
 #include "commandHandler.h"
+#include "ResponseParser.h"
 
 class CLI{
     public:
