@@ -15,6 +15,7 @@ class redisClient{
 
         bool connectToServer();
         void disconnect();
+        int getSocketFD() const ;
     private:
     std::string host;
     int port;

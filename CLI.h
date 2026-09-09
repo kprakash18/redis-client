@@ -3,6 +3,7 @@
 
 #include <string>
 #include "redisClient.h"
+#include "commandHandler.h"
 
 class CLI{
     public:

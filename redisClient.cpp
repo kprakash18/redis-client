@@ -64,3 +64,8 @@ void redisClient::disconnect() {
     }
 
 }    
+
+
+int redisClient::getSocketFD()const{
+    return sockfd;
+}
