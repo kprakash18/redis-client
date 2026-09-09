@@ -10,6 +10,7 @@ Establishing a TCP Connection to Redis (RedisClient)
 */
 
 #include "redisClient.h"
+#include <cstddef>
 #include <iostream>
 #include <netdb.h>
 #include <string>
@@ -68,4 +69,10 @@ void redisClient::disconnect() {
 
 int redisClient::getSocketFD()const{
     return sockfd;
+}
+
+bool redisClient::sendCommand(const std::string &command){
+    if(sockfd == -1) return false;
+    ssize_t sent = send(sockfd, command.c_str(), command.size(), 0);
+    return (sent == (ssize_t)command.size());
 }
