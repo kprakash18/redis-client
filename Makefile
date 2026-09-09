@@ -3,15 +3,22 @@ CXXFLAGS = -std=c++17 -Wall -Wextra -I.
 
 BUILD_DIR = build
 TARGET = $(BUILD_DIR)/redis_client
+TEST_TARGET = $(BUILD_DIR)/test_runner
 
-SRCS = $(wildcard *.cpp)
-OBJS = $(patsubst %.cpp, $(BUILD_DIR)/%.o, $(SRCS))
+APP_SRCS = cli.cpp commandHandler.cpp redisClient.cpp ResponseParser.cpp main.cpp
+APP_OBJS = $(patsubst %.cpp, $(BUILD_DIR)/%.o, $(APP_SRCS))
 
-.PHONY: all clean rebuild run
+TEST_SRCS = cli.cpp commandHandler.cpp redisClient.cpp ResponseParser.cpp tests.cpp
+TEST_OBJS = $(patsubst %.cpp, $(BUILD_DIR)/%.o, $(TEST_SRCS))
+
+.PHONY: all clean rebuild run test
 
 all: $(TARGET)
 
-$(TARGET): $(OBJS) | $(BUILD_DIR)
+$(TARGET): $(APP_OBJS) | $(BUILD_DIR)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+$(TEST_TARGET): $(TEST_OBJS) | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 $(BUILD_DIR)/%.o: %.cpp | $(BUILD_DIR)
@@ -27,3 +34,7 @@ rebuild: clean all
 
 run: $(TARGET)
 	./$(TARGET)
+
+test: $(TEST_TARGET)
+	./$(TEST_TARGET)
+

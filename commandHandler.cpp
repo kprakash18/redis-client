@@ -6,7 +6,7 @@
  std::vector<std::string> commandHandler::splitArgs(const std::string &input){
     std::vector<std::string>tokens;
         // regex to match words or quotes strings
-        std::regex rgx(R"((\"[^\"]+\"|\S+))"); 
+        std::regex rgx(R"((\"[^\"]*\"|\S+))"); 
         auto words_begin = std::sregex_iterator(input.begin(), input.end(), rgx);
         auto words_end = std::sregex_iterator();
 
