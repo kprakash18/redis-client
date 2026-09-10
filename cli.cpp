@@ -1,7 +1,6 @@
-#include "CLI.h"
-#include "ResponseParser.h"
-#include "commandHandler.h"
-#include <cstddef>
+#include "headers/CLI.h"
+#include "headers/ResponseParser.h"
+#include "headers/commandHandler.h"
 #include <iostream>
 #include <string>
 #include <vector>

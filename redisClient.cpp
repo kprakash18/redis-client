@@ -9,12 +9,13 @@ Establishing a TCP Connection to Redis (RedisClient)
         disconnect() -> Closes the socket when finished.
 */
 
-#include "redisClient.h"
-#include <cstddef>
+#include "headers/redisClient.h"
 #include <iostream>
+#include <cstring>
+#include <unistd.h>
 #include <netdb.h>
-#include <string>
 #include <sys/socket.h>
+#include <string>
 
 
 

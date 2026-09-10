@@ -1,5 +1,5 @@
 CXX = clang++
-CXXFLAGS = -std=c++17 -Wall -Wextra -I.
+CXXFLAGS = -std=c++17 -Wall -Wextra -Iheaders -I.
 
 BUILD_DIR = build
 TARGET = $(BUILD_DIR)/redis_client

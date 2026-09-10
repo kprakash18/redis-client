@@ -1,0 +1,4 @@
+build/
+*.o
+redis_client
+.DS_Store

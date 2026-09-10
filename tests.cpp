@@ -4,8 +4,8 @@
 #include <string>
 #include <sys/socket.h>
 #include <unistd.h>
-#include "commandHandler.h"
-#include "ResponseParser.h"
+#include "headers/commandHandler.h"
+#include "headers/ResponseParser.h"
 
 void testSplitArgs() {
     std::cout << "[TEST] commandHandler::splitArgs... ";

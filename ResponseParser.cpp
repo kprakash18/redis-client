@@ -1,9 +1,5 @@
-#include "ResponseParser.h"
+#include "headers/ResponseParser.h"
 #include <sstream>
-#include <string>
-#include <unistd.h>
-#include <cstdlib>
-#include <sys/types.h>
 #include <sys/socket.h>
 
 // Function to read a single character from the socket.

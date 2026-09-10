@@ -39,7 +39,7 @@ CLI development
 
 #include <string>
 #include <vector>
-#include "CLI.h"
+#include "headers/CLI.h"
 
 int main(int argc, char* argv[]){
     std::string host = "127.0.0.1";
