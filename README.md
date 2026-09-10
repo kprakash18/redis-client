@@ -159,7 +159,10 @@ redis-client/
 └── LICENSE                         # MIT License
 ```
 
-
 ---
+
+## 🙏 Acknowledgments
+
+This project and curriculum were built following the excellent tutorial series **"Building a Redis Client from Scratch"** by [**Dev w/Sel**](https://www.youtube.com/@Dev_with_Sel). Special thanks to Sel for providing such clear, high-quality systems programming content!
 
 

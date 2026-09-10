@@ -113,3 +113,10 @@ Goodbye!
 1. Start with **[Part 1: Architecture & CLI Entry](part1.md)** to grasp the overall system decomposition.
 2. Progress sequentially through **Part 2** to **Part 6**.
 3. Inspect `tests.cpp` to see how low-level network protocol parsers are verified deterministically without external server dependencies using Unix `socketpair()`.
+
+---
+
+## 🙏 Acknowledgments & Credits
+
+These notes and project implementation were created following the tutorial series **"Building a Redis Client from Scratch"** by [**Dev w/Sel**](https://www.youtube.com/@Dev_with_Sel). Gratitude to Sel for creating an insightful, hands-on series on C++ network systems programming!
+
